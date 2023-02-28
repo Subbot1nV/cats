@@ -1,4 +1,4 @@
-class Card {
+export class Card {
     #data;
     #selectorTemplate;
     #element;
@@ -15,23 +15,20 @@ class Card {
         this.#handleClickCatImage = handleClickCatImage;
     }
 
-    getElement() {
-        this.#element = this.#getTemplate().cloneNode(true);
-        const cardTitleElement = this.#element.querySelector('.card__name');
-        const cardImageElement = this.#element.querySelector('.card__image');
-        const cardLikeElement = this.#element.querySelector('.card__like');
+    getElement(){
+        this.#element = this.#getTemplate().cloneNode(true)
+        const cardTitleElement = this.#element.querySelector('.card__name')
+        const cardImgElement = this.#element.querySelector('.card__image')
+        const cardLikeElement = this.#element.querySelector('.card__like')
 
         cardTitleElement.textContent = this.#data.name
-        cardImageElement.src = this.#data.img_link
+        cardImgElement.src = this.#data.image
 
-        if(!this.#data.favourite) {
-            cardLikeElement.remove()
-        }
+        if(!this.#data.favorite) cardLikeElement.remove()
 
-        cardImageElement.addEventListener('click', () => {
-            this.#handleClickCatImage(this.#data.img_link);
+        cardImgElement.addEventListener('click', () => {
+            this.#handleClickCatImage(this.#data.image)
         })
-        //Наполнять карточку
-        return this.#element;
+        return this.#element
     }
 }

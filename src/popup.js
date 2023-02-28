@@ -1,4 +1,4 @@
-class Popup {
+export class Popup {
 
     #handleEscUp = (evt) =>  {
         if (evt.key === 'Escape') {
@@ -21,9 +21,7 @@ class Popup {
 
     setEventListener() {
         this._popupElement.addEventListener('mousedown', evt => {
-            if (evt.target.classList.contains('popup') || !!evt.target.closest('.popup__close')) {
-                this.close()
-            }
+            if (evt.target.classList.contains('popup') || !!evt.target.closest('.popup__close')) this.close()
         })
     }
 }

@@ -14,7 +14,7 @@ const config = {
 
 class Api {
     #getResponse(res) {
-        return res.ok ? res.json() : Promise.reject();
+        return res.ok ? res.json() : Promise.reject('Ошибка на стороне сервера!')
     }
 
     #baseUrl;
@@ -42,6 +42,7 @@ class Api {
 
     addNewCat(data){
         return fetch(`${this.#baseUrl}/add`, {
+            method: 'POST',
             headers: this.#headers,
             body: JSON.stringify(data)
         })
@@ -57,7 +58,7 @@ class Api {
             .then(this.#getResponse)
     }
 
-    udeleteByCatById(idCat){
+    deleteByCatById(idCat){
         return fetch(`${this.#baseUrl}/delete/${idCat}`, {
             method: 'DELETE',
         })
@@ -65,4 +66,4 @@ class Api {
     }
 }
 
- const api = new Api(config);
+export const api = new Api(config)
