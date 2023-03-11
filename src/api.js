@@ -1,10 +1,3 @@
-// GET https://cats.petiteweb.dev/api/single/:user/show - отобразить всех котиков
-// GET https://cats.petiteweb.dev/api/single/:user/ids - отобразить все возможные айди котиков
-// GET https://cats.petiteweb.dev/api/single/:user/show/:id  - отобразить конкретного котика
-// POST https://cats.petiteweb.dev/api/single/:user/add - добавить котика
-// PUT https://cats.petiteweb.dev/api/single/:user/update/:id - изменить информацию о котике
-// DELETE  https://cats.petiteweb.dev/api/single/:user/delete/:id - удалить котика из базы данных
-
 const config = {
     baseUrl: 'https://cats.petiteweb.dev/api/single/Subbot1nV',
     headers: {
@@ -58,7 +51,7 @@ class Api {
             .then(this.#getResponse)
     }
 
-    deleteByCatById(idCat){
+    deleteCatById(idCat){
         return fetch(`${this.#baseUrl}/delete/${idCat}`, {
             method: 'DELETE',
         })

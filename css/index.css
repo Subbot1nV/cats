@@ -1,6 +1,5 @@
 @import url("./setup/variables.css");
 @import url("./setup/base.css");
-
 @import url("./blocks/container.css");
 @import url("./blocks/logo.css");
 @import url("./blocks/btn.css");
@@ -15,4 +14,3 @@
 @import url("./blocks/popup.css");
 @import url("./blocks/form.css");
 @import url("./blocks/cat-info.css");
-

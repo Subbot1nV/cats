@@ -21,8 +21,8 @@
 }
 
 .popup__container {
-    max-width: 600px;
-    background-color: var(--form-color);
+    max-width: 700px;
+    background-color: rgb(240, 240, 240);
     padding: 20px;
     position: relative;
     border-radius: 10px;
@@ -37,9 +37,9 @@
 .popup__close_external {
     background-color: transparent;
     color: var(--bg-main-color);
-    top: -40px;
-    right: -40px;
-    font-size: 30px;
+    top: -37px;
+    right: -35px;
+    font-size: 31px;
 }
 
 .popup__image {
